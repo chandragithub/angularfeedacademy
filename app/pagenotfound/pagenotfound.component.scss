@@ -1,0 +1,18 @@
+.block {
+  color:#fff;
+  font-family:'Fira Sans', sans-serif;
+  padding:20% 20px;
+  text-align:center;
+}
+
+.-berry {
+  background: linear-gradient(10deg, #f3ebd7, #f4c54c);
+}
+
+.edge--top {
+  height: calc(100% - 113px);
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+

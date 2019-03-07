@@ -1,0 +1,52 @@
+$primary-color: #ffffff;
+$brand-color: #e33530;
+$brand-color-2: #3e4a54;
+$title: #404040;
+$sub-title: #3e4a53;
+$footer-brand: #878a8e;
+$read-more: #878a8e;
+
+.inline {
+    display: inline-block;
+}
+
+.article-container {
+    margin-top: 30px;
+}
+.article-list {
+    padding: 0;
+    margin: 10px 0;
+}
+
+.card-header p {
+    margin-bottom: 0;
+}
+.article-title {
+    color: #505153;
+    font-size: 25px;
+    line-height: 30px;
+}
+.article-author {
+    font-size: 12px;
+    color: #505153;
+    text-transform: uppercase;
+}
+.article-date {
+    text-align: right;
+    font-size: 12px;
+    font-weight: 600;
+}
+.card-header {
+    background-color: transparent;
+    border-bottom: 0;
+    border-bottom: 2px solid #9ea1a5;
+    margin: 0 15px;
+    padding: 10px 0;
+}
+.card {
+    margin: 5px;
+}
+
+.features {
+    margin-bottom: 15px;
+}

@@ -1,0 +1,123 @@
+$primary-color: #ffffff;
+$brand-color: #e33530;
+$brand-color-2: #3e4a54;
+$title: #404040;
+$sub-title: #3e4a53;
+$footer-brand: #878a8e;
+$read-more: #878a8e;
+$black: #000;
+$white: #fff;
+
+.navigation-clean-button {
+  background:#fff;
+  padding-bottom: 0;
+  border-radius:0;
+  border:none;
+  margin-bottom:0;
+  background-color: $primary-color;
+  color:#ffffff;
+}
+.navbar-brand {
+  color: #fff;
+  font-size: 30px;
+}
+
+.navbar-brand:hover {
+  color: #fff;
+}
+
+.gradient {
+  color:#fff;
+}
+
+.brand-one {
+  color: $brand-color;
+  font-size: 30px;
+  font-weight: 400;
+}
+.brand-two {
+  color: $brand-color-2;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.af-tabs li a {
+  color: #505153;
+  border-bottom: 2px solid transparent;
+  margin-top: -2px;
+  padding-bottom: 4px;
+  text-decoration: none;
+  transition: border-color ease 0.25s;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0 10px;
+}
+.af-tabs li a:hover {
+  border-bottom: 2px solid $brand-color;
+}
+a.active {
+   border-bottom: 2px solid $brand-color !important;
+}
+.logo img {
+    vertical-align: top;
+    border-style: none;
+}
+.navbar-toggler {
+    padding: 0 !important;
+    line-height: 0 !important;
+}
+.menu-bar {
+    color: #fff;
+    font-size: 25px;
+    margin-top: 15px;
+}
+.overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: $primary-color;
+    z-index: 10;
+    text-align: center;
+    padding-top: 65px;
+    font-size: 26px;
+    text-transform: uppercase;
+    overflow-y: auto;
+}
+.overlay a {
+  color: #000;
+  font-size: 20px;
+}
+.overlay a:hover {
+  color: $brand-color;
+  font-size: 20px;
+  text-decoration: none;
+}
+.close-submenu {
+    color: #000;
+    position: fixed;
+    font-size: 26px;
+    right: 25px;
+    top: 20px;
+}
+.mobile-menu {
+    color: #3c3d41;
+}
+.af-fixed-top {
+    padding: 0 15px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.12);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    height: 75px;
+}

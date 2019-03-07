@@ -1,0 +1,35 @@
+<div class="training-container container-height">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4" *ngFor="let training of trainingList">
+                <div class="card h-100 one-edge-shadow curve">
+                    <img class="img-fluid" [src]="'assets/images/articles/thumbnail/'+ training.image" />
+                    <div class="thumbnail-contianer">
+                        <div class="thumbnail-subconteinar">
+                            <img [src]="'assets/images/technology/'+ training.techimage">
+                            <div class="thumbnail-text">
+                                <p class="technology"> {{ training.technology }}</p>
+                                <p class="subtech"> {{ training.subtech }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="box">
+                            <p class="description"> {{ training.name }} </p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="box">
+                            <div class="left">
+                               <img [src]="'assets/images/profile/'+ training.profileImg" alt="profile image"> {{ training.profileName }}
+                            </div>
+                            <div class="right">
+                                {{ training.cost |currency }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

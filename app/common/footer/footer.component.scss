@@ -1,0 +1,31 @@
+$primary-color: #00bcd4;
+$brand-color: #96201d;
+$brand-color-2: #3e4a54;
+$title: #404040;
+$sub-title: #3e4a53;
+$footer-brand: #878a8e;
+$read-more: #878a8e;
+#myFooter {
+  background-color:#3c3d41;
+  color:white;
+}
+
+#myFooter .footer-copyright {
+  padding-top:3px;
+  padding-bottom:3px;
+  text-align:center;
+}
+
+
+#myFooter .footer-copyright p {
+  margin:10px;
+  color: $footer-brand !important;
+}
+
+#myFooter .footer-copyright a {
+  color: $footer-brand !important;
+}
+
+#myFooter .footer-copyright a {
+  color: $footer-brand !important;
+}

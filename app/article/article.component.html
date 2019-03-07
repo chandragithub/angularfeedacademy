@@ -1,0 +1,31 @@
+<div class="angular-articles container-height">
+  <ul>
+    <li *ngFor="let it of item">
+      {{ it.firstname }}
+    </li>
+  </ul>
+  <div class="articles-container">
+    <div class="container">
+      <div class="row justify-content-center features">
+        <div class="col-md-7 article-list" *ngFor="let article of articleLists">
+          <div class="card h-100 one-edge-shadow">
+            <div class="card-header">
+                  <div class="col-sm-12 article-title padding-null">
+                      <p class="description"> {{ article.title }} </p>
+                  </div>
+                  <div class="col-xs-12 inline article-author padding-null">
+                      <p class=""> {{ article.author }} </p>
+                  </div>
+            </div>
+            <div class="card-body">
+              <div class="box">
+                  <p class=""> {{ article.description }} </p>
+                  <p class="af-inner-btn" [routerLink]="'/blog/' +article.url" (click)="articleClick()"> read more </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

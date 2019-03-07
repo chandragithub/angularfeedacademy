@@ -1,0 +1,87 @@
+<div class="taf-container container-height">
+  <div class="" *ngIf="isPageLoadingError">
+    <page-not-found> </page-not-found>
+  </div>
+  <div class="container taf-inner-container" *ngIf="!isPageLoadingError">
+    <div class="row taf-container-row" *ngIf="isPageLoaded">
+      <div class="col-md-3 tutorial-index">
+        <div class="list-of-articles">
+          <div class="tutorial-name">
+            {{ technology | uppercase }}
+            <span>
+              <fa-icon (click)="onMenuOpen()" [icon]="faEllipsisV" class="mobile-menu" aria-hidden="true"></fa-icon>
+            </span>
+          </div>
+          <div class="overlay" [hidden]="!subMenu">
+            <fa-icon [icon]="faTimes" class="close-submenu" (click)="onMenuClose()" aria-hidden="true"></fa-icon>
+            <p>
+              <a *ngFor="let tutorialsList of tutorialLists" [routerLink]="['/tutorials', technology, tutorialsList.url]"
+                (click)="tutorialClick()">
+                <div class="articles article-mobile" [ngClass]="tutorialsList.url">
+                  <ul>
+                    <li>
+                      <p>
+                        {{ tutorialsList.title }}
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </a>
+            </p>
+          </div>
+          <a *ngFor="let tutorialsList of tutorialLists" [routerLink]="['/tutorials', technology , tutorialsList.url]"
+            (click)="tutorialClick()">
+            <div class="articles article-list" [ngClass]="tutorialsList.url">
+              <ul>
+                <li>
+                  <p>
+                    {{ tutorialsList.title }}
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-8 tutorial-body" *ngFor="let tutorial of tutorials">
+        <!-- <div class="tutorial-name">
+                  
+              </div> -->
+        <div class="tutorial-content">
+          <div class="title article-head">
+            <h4> {{ tutorial.title }} </h4>
+          </div>
+          <div class="title article-body">
+            <p class="tutorial-intro" [innerHtml]="tutorial.introduction"> </p>
+            <div class="mainindex" *ngFor="let mainIndex of tutorial.index">
+              <h6 *ngIf="mainIndex.title" [attr.id]="mainIndex.title.split(' ').join('_')"> {{ mainIndex.title }} </h6>
+              <div *ngFor="let subIndex of mainIndex.data">
+                <p class="tutorial-intro" [innerHtml]="subIndex.introduction"> </p>
+                <ul class="list-content" *ngFor="let list of subIndex.list">
+                  <li> {{list}} </li>
+                </ul>
+                <ngx-prism [language]="subIndex.code_type" [hooks]="hooks" [code]="content"
+                  [interpolation]="interpolate" *ngIf="subIndex.code_snippet">
+                  {{ subIndex.code_snippet }}
+                </ngx-prism>
+                <p class="tutorial-intro" [innerHtml]="subIndex.code_description" *ngIf="subIndex.code_description">
+                </p>
+                <div class="col-md-12 subimages-container">
+                  <img class="intro-image" [src]="'assets/images/tutorials/node/' + subIndex.image"
+                    *ngIf="subIndex.image">
+                </div>
+                <iframe class="iframe" [src]="subIndex.stackblitz_url | safeUrl"
+                  *ngIf="subIndex.stackblitz_url"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1 share-btns">
+        <p class="share"> Share </p>
+        <share-buttons [theme]="'moon'" [include]="['facebook','twitter','google','linkedin']" [show]="4"
+          [showCount]="false" [url]="pageUrl" [autoSetMeta]="false"></share-buttons>
+      </div>
+    </div>
+  </div>
+</div>

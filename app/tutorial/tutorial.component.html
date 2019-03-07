@@ -1,0 +1,14 @@
+<div class="container-height">
+  <div class="features-boxed">
+    <div class="container">
+      <div class="row justify-content-center features">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4 item" *ngFor="let tutorial of ourTutorials">
+          <div class="box" [routerLink]="['/tutorials/', tutorial.url, 'introduction']">
+            <img [src]="'assets/images/technology/'+ tutorial.name + '.png'">
+            <p class="description"> {{ tutorial.name | uppercase }} </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

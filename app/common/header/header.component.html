@@ -1,0 +1,27 @@
+<nav #header class="navbar navbar-expand-md navigation-clean-button one-edge-shadow af-fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand logo" routerLink="">
+      <img class="logo-bg" src="assets/images/angularfeed-transparent.png"> 
+      <span class="brand-one"> {{name1}}</span><span class="brand-two">{{name2}}</span>
+    </a>
+    <button class="navbar-toggler menu-bar" data-toggle="collapse" data-target="#navcol-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="navbar-toggler-icon" (click)="onMenuOpen()">
+        <fa-icon [icon]="faBars" class="mobile-menu" aria-hidden="true"></fa-icon> 
+      </span>
+    </button>
+    <div class="overlay" [hidden]="!subMenu">
+      <fa-icon [icon]="faTimes" class="close-submenu" (click)="onMenuClose()" aria-hidden="true"></fa-icon>
+      <p *ngFor="let menu of menu"> 
+        <a [routerLink]="menu.url" (click)="onMenuClose()"> {{ menu.name | uppercase }} </a>
+      </p>
+    </div>
+    <div class="collapse navbar-collapse" id="navcol-1">
+      <ul class="nav navbar-nav ml-auto af-tabs">
+        <li class="nav-item" role="presentation" *ngFor="let menu of menu">
+          <a class="nav-link" [id]="menu.name" [routerLink]="menu.url" routerLinkActive="active"> {{ menu.name | uppercase }} </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
